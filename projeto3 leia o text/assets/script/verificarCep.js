@@ -19,6 +19,31 @@ $('#verificar').click((e)=>{
                 $('#cidade').val(dados.localidade);
                 $('#estado').val(dados.estado);
 
+
+                const nome = $("#nome").val();
+                const sobreNome = $("#sobrenome").val();
+                const email = $("#email").val();
+                const senha = $('#senha').val();
+                const numeroCasa = $('#numero').val();
+                const complemento = $("#complemento").val() 
+                if(nome == "" || sobreNome == "" || email =="" || senha == "" || numeroCasa == "" || complemento == ""){
+                    alert("preencha todos os campos do formulário");
+                }
+                else{
+                    if(validarEmail(email)){
+
+                        alert("campo enviado com sucesso");
+                    }
+                    else {
+                        alert('email invalido');
+                    }
+                }
+
+
+                function validarEmail(email){
+                    const regex = /\S+@\S+\.\S+/;
+                    return regex.test(email);
+                }
            }
         });
 
