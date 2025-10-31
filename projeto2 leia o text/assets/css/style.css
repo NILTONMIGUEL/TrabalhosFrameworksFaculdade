@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.form{
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto 0 auto;
+
+}
+.p-right{
+    padding-right:10px
+}
+.p-left{
+    padding-left: 10px;
+}

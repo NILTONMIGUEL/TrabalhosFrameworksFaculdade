@@ -1,0 +1,2 @@
+usando o javaScript para consumir uma api de cep 
+primeiro trabalho
