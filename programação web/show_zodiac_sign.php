@@ -1,26 +1,24 @@
 <?php include('layouts/header.php'); ?>
+
 <?php
-    $dataNascimento = filter_input(INPUT_POST, "data_nascimento");
-    $dataBr = new DateTime($dataNascimento);
-    $dia = $dataBr->format('d');
-    $mes = $dataBr->format('m');
+    $dataNascimento = (string)filter_input(INPUT_POST, "data_nascimento");
+    $dataNasc = str_replace("-","", $dataNascimento);
+    $AnoNascimento = substr($dataNasc,0 ,4);
+    $mesNascimento = substr($dataNasc,4,2);
+    $diaNascimento = substr($dataNasc,6,2);
 
-    $nascimento = $dia . "/". $mes;
+    $diaNascimento = (int)$diaNascimento;
+    $mesNascimento = (int)$mesNascimento;
 
-
-    $signos = simplexml_load_file("signos.xml"); 
+    $signos = simplexml_load_file("signos.xml");
 
     foreach($signos->signo as $signo){
-        $dataInicio = $signo->dataInicio;
-        $dataFim = $signo->dataFim;
 
-        if($nascimento >= $dataInicio && $nascimento <= $dataFim){
-            echo $signo->
-        }
+        $dataInicial = (string)$signo->dataInicio;
+        $dataInicial = str_replace("/","", $dataInicial);
 
+        echo $dataInicial;
+        break;
     }
-
-    echo $dataInicio;
-    echo $dataFim;
 
 ?>
